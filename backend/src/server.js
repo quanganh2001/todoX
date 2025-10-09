@@ -18,6 +18,6 @@ app.use('/api/tasks', taskRoute);
 
 connectDB().then(() => {
   app.listen(PORT, () => {
-    console.log('server bắt đầu trên cổng 5001');
+    console.log(`server bắt đầu trên cổng ${PORT}`);
   });
 });
