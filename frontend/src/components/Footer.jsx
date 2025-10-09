@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const Footer = ({ completedTasksCount = 0, activeTasksCount = 0 }) => {
   return (
@@ -9,11 +9,14 @@ const Footer = ({ completedTasksCount = 0, activeTasksCount = 0 }) => {
             {completedTasksCount > 0 && (
               <>
                 🎉 Tuyệt vời! Bạn đã hoàn thành {completedTasksCount} việc
-                {activeTasksCount > 0 && `, còn ${activeTasksCount} việc nữa thôi. Cố lên!`}
+                {activeTasksCount > 0 &&
+                  `, còn ${activeTasksCount} việc nữa thôi. Cố lên!`}
               </>
             )}
 
-            {completedTasksCount === 0 && activeTasksCount > 0 && <>Hãy bắt đầu làm {activeTasksCount} nhiệm vụ nào!</>}
+            {completedTasksCount === 0 && activeTasksCount > 0 && (
+              <>Hãy bắt đầu làm {activeTasksCount} nhiệm vụ nào!</>
+            )}
           </p>
         </div>
       )}

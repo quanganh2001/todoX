@@ -1,19 +1,37 @@
-import * as React from 'react';
-import { Check, ChevronsUpDown } from 'lucide-react';
-import { cn } from '@/lib/utils';
-import { Button } from '@/components/ui/button';
-import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from '@/components/ui/command';
-import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
-import { options } from '@/lib/data';
+import * as React from "react";
+import { Check, ChevronsUpDown } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import {
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+} from "@/components/ui/command";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { options } from "@/lib/data";
 
 const DateTimeFilter = ({ dateQuery, setDateQuery }) => {
   const [open, setOpen] = React.useState(false);
 
   return (
-    <Popover open={open} onOpenChange={setOpen}>
+    <Popover
+      open={open}
+      onOpenChange={setOpen}
+    >
       <PopoverTrigger asChild>
-        <Button size="lg" variant="outline" role="combobox" aria-expanded={open}>
-          {dateQuery ? options.find((option) => option.value === dateQuery)?.label : options[0].label}
+        <Button
+          size="lg"
+          variant="outline"
+          role="combobox"
+          aria-expanded={open}
+          className=""
+        >
+          {dateQuery
+            ? options.find((option) => option.value === dateQuery)?.label
+            : options[0].label}
           <ChevronsUpDown className="opacity-50" />
         </Button>
       </PopoverTrigger>
@@ -31,7 +49,12 @@ const DateTimeFilter = ({ dateQuery, setDateQuery }) => {
                   }}
                 >
                   {option.label}
-                  <Check className={cn('ml-auto', dateQuery === option.value ? 'opacity-100' : 'opacity-0')} />
+                  <Check
+                    className={cn(
+                      "ml-auto",
+                      dateQuery === option.value ? "opacity-100" : "opacity-0"
+                    )}
+                  />
                 </CommandItem>
               ))}
             </CommandGroup>

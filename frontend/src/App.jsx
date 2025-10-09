@@ -1,7 +1,7 @@
-import { Toaster } from 'sonner';
-import { BrowserRouter, Routes, Route } from 'react-router';
-import HomePage from './pages/HomePage';
-import NotFound from './pages/NotFound';
+import { Toaster } from "sonner";
+import { BrowserRouter, Routes, Route } from "react-router";
+import HomePage from "./pages/HomePage";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -10,9 +10,15 @@ function App() {
 
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route
+            path="/"
+            element={<HomePage />}
+          />
 
-          <Route path="*" element={<NotFound />} />
+          <Route
+            path="*"
+            element={<NotFound />}
+          />
         </Routes>
       </BrowserRouter>
     </>
